@@ -1,0 +1,59 @@
+# Site settings
+title:       Nathan Sweet's Blog
+email:       nathanjsweet@gmail.com
+author:      Nathan Sweet
+description: "Nathan Sweet's thoughts on computer programming, protips, and, hopefully, not too many rants..."
+baseurl:     ""
+url:         "http://nathansweet.me"
+date_format: "%b %-d, %Y"
+
+# Google services
+google_analytics:
+google_verification:
+
+# Optional features
+animated:             false
+show_related_posts:   true
+show_post_footers:    false
+show_social_icons:    false
+ajaxify_contact_form: false
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname:
+
+# Social icons
+github_username:
+bitbucket_username:
+stackoverflow_id:
+twitter_username:
+google_plus_id:
+linkedin_username:
+angellist_username:
+medium_id:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Post sharing icons
+show_sharing_icons: false
+share_text: 'Share this post!'
+# Change to 'false' to enable individual icons
+share_facebook: false
+share_twitter: false
+share_googleplus: false
+share_linkedin: false
+share_digg: false
+share_tumblr: false
+share_reddit: false
+share_stumbleupon: false
+share_hackernews: false
+
+# Build settings
+markdown:     kramdown
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    pretty
+paginate:     2
+sass:
+  compressed: true
