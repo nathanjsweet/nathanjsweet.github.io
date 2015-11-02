@@ -3,4 +3,4 @@ _site
 
 # Ignore the config file that's used for gh-pages.
 _config.gh-pages.yml
-_saved_posts
+unbuilt_assets
