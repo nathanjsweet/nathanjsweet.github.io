@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Build the Linux Kernel for VirtualBox
-date:       2017-02-01
+date:       2017-02-03
 summary:    How to build a custom Linux kernel, run it inside your favorite distro, inside VirtualBox.
 categories: linux, kernel, build, custom
 comments:   true
