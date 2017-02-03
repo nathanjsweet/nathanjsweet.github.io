@@ -19,9 +19,9 @@ you don't have to worry about messing up your system, so you have freedom to rea
 
 2. Next, we need to clone the Linux repository. Open a terminal tab and run:
 
-	<code class="hljs bash">
+	<pre class="highlight><code class="hljs bash">
 	git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
-	</code>
+	</code></pre>
 
 	This will take a while (it is gigabytes large), and we have other stuff to do.
 
