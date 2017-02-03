@@ -51,9 +51,11 @@ again to make sure the distro is installed.
 
 8. Make sure you qemu-nbd installed:
 
-	```
+	<pre class="highlight>
+	<code class="hljs bash">
 	lsmod | grep nbd
-	```
+	</code>
+	</pre>
 
 	If not run:
 
