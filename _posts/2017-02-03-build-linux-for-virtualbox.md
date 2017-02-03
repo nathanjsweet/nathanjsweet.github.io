@@ -53,70 +53,90 @@ again to make sure the distro is installed.
 
 8. Make sure you qemu-nbd installed:
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	lsmod | grep nbd
 	</code>
+	</pre>
 
 	If not run:
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	sudo modprobe nbd max_part=8
 	</code>
+	</pre>
 
 9. Next create a device from the vdi file:
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	sudo qemu-nbd -c /dev/nbd1 /home/$YOUR_USER/VirtualBox\ VMs/$YOUR_DISTRO/$YOUR_DISTRO.vdi
 	</code>
+	</pre>
 
 10. Sometimes the partitions won't show up. If that happens run:
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	sudo partprobe /dev/nbd1
 	</code>
+	</pre>
 
 11. Mount the boot and rootpartition:
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	sudo mount /dev/nbd1p1 /mnt <span class="hljs-comment"># assuming this is root</span>
 	sudo mount /dev/nbd1p2 /mnt/boot <span class="hljs-comment"># assuming this is boot</span>
-	<code class="hljs bash">
+	</code>
+	</pre>
 
 12. `cd` into the linux-stable git folder when it's fully downloaded. Copy your current distro's config (or generate one in another way). Build the kernel.
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	cd /home/$YOUR_USER/Development/linux-stable
 	cp /boot/config-`uname -r`* .config
 	make <span class="hljs-comment"># this will take a while</span>
 	</code>
+	</pre>
 
 	Note: you can speed the build process by running:
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	make -jX <span class="hljs-comment"># X is the number of cores you want to dedicate to the build process; this will slow your system</span>
 	</code>
+	</pre>
 
 12. Install the modules and kernel into the nbd mount.
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	sudo make INSTALL_MOD_PATH=/mnt/lib/modules/`uname -r` modules_install
 	sudo make INSTALL_PATH=/mnt/boot install
 	</code>
+	</pre>
 
 13. Unmount the nbd paritions and remove the nbd device:
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	sudo umount /mnt/boot
 	sudo umount /mnt
 	sudo qemu-nbd -d /deb/nbd1
 	</code>
+	</pre>
 
 14. Start up you virtual machine, remove the old ramdisk, create a new one, and update grub.
 
+	<pre class="highlight">
 	<code class="hljs bash">
 	sudo rm /boot/initramfs-`uname -r`.img
 	sudo update-initramfs -c -k $VERSION_OF_LINUX_YOU_BUILT <span class="hljs-comment"># make sure this looks like what uname -r would output</span>
 	sudo update-grub
 	</code>
+	</pre>
 
 15. Restart your virtual machine, and you should now see your custom linux build.
