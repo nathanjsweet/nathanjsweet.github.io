@@ -19,7 +19,7 @@ you don't have to worry about messing up your system, so you have freedom to rea
 
 2. Next, we need to clone the Linux repository. Open a terminal tab and run:
 
-	```sh
+	```bash
 	git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
 	```
 
@@ -51,31 +51,31 @@ again to make sure the distro is installed.
 
 8. Make sure you qemu-nbd installed:
 
-	```sh
+	```bash
 	lsmod | grep nbd
 	```
 
 	If not run:
 
-	```sh
+	```bash
 	sudo modprobe nbd max_part=8
 	```
 
 9. Next create a device from the vdi file:
 
-	```sh
+	```bash
 	sudo qemu-nbd -c /dev/nbd1 /home/$YOUR_USER/VirtualBox\ VMs/$YOUR_DISTRO/$YOUR_DISTRO.vdi
 	```
 
 10. Sometimes the partitions won't show up. If that happens run:
 
-	```sh
+	```bash
 	sudo partprobe /dev/nbd1
 	```
 
 11. Mount the boot and rootpartition:
 
-	```sh
+	```bash
 	sudo mount /dev/nbd1p1 /mnt # assuming this is root
 	sudo mount /dev/nbd1p2 /mnt/boot # assuming this is boot
 	```
@@ -90,20 +90,20 @@ again to make sure the distro is installed.
 
 	Note: you can speed the build process by running:
 
-	```sh
+	```bash
 	make -jX # X is the number of cores you want to dedicate to the build process; this will slow your system
 	```
 
 12. Install the modules and kernel into the nbd mount.
 
-	```sh
+	```bash
 	sudo make INSTALL_MOD_PATH=/mnt/lib/modules/`uname -r` modules_install
 	sudo make INSTALL_PATH=/mnt/boot install
 	```
 
 13. Unmount the nbd paritions and remove the nbd device:
 
-	```sh
+	```bash
 	sudo umount /mnt/boot
 	sudo umount /mnt
 	sudo qemu-nbd -d /deb/nbd1
@@ -111,7 +111,7 @@ again to make sure the distro is installed.
 
 14. Start up you virtual machine, remove the old ramdisk, create a new one, and update grub.
 
-	```sh
+	```bash
 	sudo rm /boot/initramfs-`uname -r`.img
 	sudo update-initramfs -c -k $VERSION_OF_LINUX_YOU_BUILT # make sure this looks like what uname -r would output
 	sudo update-grub
