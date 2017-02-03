@@ -51,19 +51,19 @@ again to make sure the distro is installed.
 
 8. Make sure you qemu-nbd installed:
 
-	```bash
+	```
 	lsmod | grep nbd
 	```
 
 	If not run:
 
-	```bash
+	```
 	sudo modprobe nbd max_part=8
 	```
 
 9. Next create a device from the vdi file:
 
-	```bash
+	```
 	sudo qemu-nbd -c /dev/nbd1 /home/$YOUR_USER/VirtualBox\ VMs/$YOUR_DISTRO/$YOUR_DISTRO.vdi
 	```
 
