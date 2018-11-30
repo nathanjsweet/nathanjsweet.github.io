@@ -1,10 +1,10 @@
 # Site settings
 title:       Nathan Sweet's Blog
-email:       nathanjsweet@gmail.com
+email:       nathanjsweet@pm.me
 author:      Nathan Sweet
 description: "Nathan Sweet's thoughts on computer programming, protips, and, hopefully, not too many rants..."
 baseurl:     ""
-url:         "http://nathansweet.me"
+url:         "https://www.nathansweet.me"
 date_format: "%b %-d, %Y"
 
 # Google services

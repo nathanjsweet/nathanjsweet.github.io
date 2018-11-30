@@ -1,7 +1,7 @@
 <div class="social-icons">
   <div class="social-icons-right">
     {% if site.github_username %}
-      <a class="fa fa-github" href="https://github.com/{{ site.github_username }}"></a>
+      <a class="fa fa-github" href="https://github.com/{{ site.github_username }}" name="Github Profile"></a>
     {% endif %}
     {% if site.bitbucket_username %}
       <a class="fa fa-bitbucket" href="https://bitbucket.org/{{ site.bitbucket_username }}"></a>
@@ -17,7 +17,7 @@
       <a class="fa fa-google-plus" href="https://plus.google.com/{{ site.google_plus_id }}/posts"></a>
     {% endif %}
     {% if site.email %}
-      <a class="fa fa-envelope" href="mailto:{{ site.email }}"></a>
+      <a class="fa fa-envelope" href="mailto:{{ site.email }}" name="Email Address"></a>
     {% endif %}
     {% if site.linkedin_username %}
       <a class="fa fa-linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}"></a>
@@ -28,7 +28,7 @@
     {% if site.medium_id %}
       <a class="fa fa-medium" href="https://medium.com/{{ site.medium_id }}"></a>
     {% endif %}
-      <a class="fa fa-lock" href="/images/gpg.txt"></a>        
+      <a class="fa fa-lock" href="/images/gpg.txt" name="GPG Public Key"></a>
   </div>
   <div class="right">
     {% if site.bitcoin_url %}
