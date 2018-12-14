@@ -1,7 +1,7 @@
 <div class="social-icons">
   <div class="social-icons-right">
     {% if site.github_username %}
-      <a class="fab fa-github" href="https://github.com/{{ site.github_username }}" name="Github Profile"></a>
+      <a class="fab fa-github" href="https://github.com/{{ site.github_username }}" name="Github Profile" target="_blank"></a>
     {% endif %}
     {% if site.bitbucket_username %}
       <a class="fas fa-bitbucket" href="https://bitbucket.org/{{ site.bitbucket_username }}"></a>
@@ -9,7 +9,7 @@
     {% if site.stackoverflow_id %}
       <a class="fas fa-stack-overflow" href="https://stackoverflow.com/users/{{ site.stackoverflow_id }}"></a>
     {% endif %}
-    <a class="fas fa-rss" href="{{ "/feed.xml" | prepend: site.baseurl }}" name="RSS feed"></a>
+    <a class="fas fa-rss" href="{{ "/feed.xml" | prepend: site.baseurl }}" name="RSS feed" target="_blank"></a>
     {% if site.twitter_username %}
       <a class="fas fa-twitter" href="https://twitter.com/{{ site.twitter_username }}"></a>
     {% endif %}
