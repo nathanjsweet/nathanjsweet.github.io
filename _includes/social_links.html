@@ -1,34 +1,35 @@
 <div class="social-icons">
   <div class="social-icons-right">
     {% if site.github_username %}
-      <a class="fa fa-github" href="https://github.com/{{ site.github_username }}" name="Github Profile"></a>
+      <a class="fas fa-github" href="https://github.com/{{ site.github_username }}" name="Github Profile"></a>
     {% endif %}
     {% if site.bitbucket_username %}
-      <a class="fa fa-bitbucket" href="https://bitbucket.org/{{ site.bitbucket_username }}"></a>
+      <a class="fas fa-bitbucket" href="https://bitbucket.org/{{ site.bitbucket_username }}"></a>
     {% endif %}
     {% if site.stackoverflow_id %}
-      <a class="fa fa-stack-overflow" href="https://stackoverflow.com/users/{{ site.stackoverflow_id }}"></a>
+      <a class="fas fa-stack-overflow" href="https://stackoverflow.com/users/{{ site.stackoverflow_id }}"></a>
     {% endif %}
-    <a class="fa fa-rss" href="{{ "/feed.xml" | prepend: site.baseurl }}" name="RSS feed"></a>
+    <a class="fas fa-rss" href="{{ "/feed.xml" | prepend: site.baseurl }}" name="RSS feed"></a>
     {% if site.twitter_username %}
-      <a class="fa fa-twitter" href="https://twitter.com/{{ site.twitter_username }}"></a>
+      <a class="fas fa-twitter" href="https://twitter.com/{{ site.twitter_username }}"></a>
     {% endif %}
     {% if site.google_plus_id %}
-      <a class="fa fa-google-plus" href="https://plus.google.com/{{ site.google_plus_id }}/posts"></a>
+      <a class="fas fa-google-plus" href="https://plus.google.com/{{ site.google_plus_id }}/posts"></a>
     {% endif %}
     {% if site.email %}
-      <a class="fa fa-envelope" href="mailto:{{ site.email }}" name="Email Address"></a>
+      <a class="fas fa-envelope" href="mailto:{{ site.email }}" name="Email Address"></a>
     {% endif %}
     {% if site.linkedin_username %}
-      <a class="fa fa-linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}"></a>
+      <a class="fas fa-linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}"></a>
     {% endif %}
     {% if site.angellist_username %}
-      <a class="fa fa-angellist" href="https://angel.co/{{ site.angellist_username }}"></a>
+      <a class="fas fa-angellist" href="https://angel.co/{{ site.angellist_username }}"></a>
     {% endif %}
     {% if site.medium_id %}
-      <a class="fa fa-medium" href="https://medium.com/{{ site.medium_id }}"></a>
+      <a class="fas fa-medium" href="https://medium.com/{{ site.medium_id }}"></a>
     {% endif %}
-      <a class="fa fa-lock" href="/images/gpg.txt" name="GPG Public Key"></a>
+      <a class="fas fa-lock" href="/images/gpg.txt" name="GPG Public Key" target="_blank"></a>
+      <a class="fas fa-key" href="https://api.github.com/users/nathanjsweet/keys" name="SSH Keys" target="_blank"></a>
   </div>
   <div class="right">
     {% if site.bitcoin_url %}
